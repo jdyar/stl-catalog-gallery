@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Example Creator Archive (dummy data)</title><style>
+:root{--bg:#f6f6f4;--card:#fff;--ink:#1d1d1f;--mute:#6b6b70;--acc:#2f6fdb}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--card:#1f1f23;--ink:#ececf0;--mute:#9a9aa3;--acc:#7aa7ff}}
+body{margin:0;font:15px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:20px 24px 8px}h1{margin:0 0 4px;font-size:22px}.sub{color:var(--mute)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;padding:8px 24px 16px;position:sticky;top:0;background:var(--bg)}
+input,select{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid #8884;background:var(--card);color:var(--ink)}
+input{flex:1;min-width:200px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;padding:0 24px 40px}
+.card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px #0002;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:#ddd}.body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.t{font-weight:600}.meta{color:var(--mute);font-size:13px}.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:12px;padding:2px 7px;border-radius:99px;background:#8882;cursor:pointer}
+a.btn{margin-top:auto;text-align:center;padding:7px;border-radius:8px;background:var(--acc);color:#fff;text-decoration:none;font-size:14px}
+.count{padding:0 24px 8px;color:var(--mute)}footer{padding:20px 24px;color:var(--mute);font-size:12px}
+</style></head><body>
+<header><h1>Example Creator Archive (dummy data)</h1><div class="sub">Search every release. Downloads stay on the creator's page.</div></header>
+<div class="bar"><input id="q" placeholder="Search titles, tags, notes..." autofocus>
+<select id="tier"><option value="">All tiers</option></select><select id="month"><option value="">All months</option></select>
+<select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">A to Z</option></select></div>
+<div class="count" id="count"></div><div class="grid" id="grid"></div>
+<footer>Generated 2026-11-18 by stlgallery. No model files are hosted here.</footer>
+<script>
+const DATA=[{"id": "2026-01-stone-well", "title": "Stone Well", "tags": ["terrain", "dungeon"], "tier": "Basic", "release": "2026-01", "url": "https://www.patreon.com/posts/example-stone-well", "notes": "Synthetic sample model for testing.", "files": ["stone-well.stl"], "img": "previews/2026-01-stone-well.png"}, {"id": "2026-01-supply-crate-set", "title": "Supply Crate Set", "tags": ["terrain", "props"], "tier": "Basic", "release": "2026-01", "url": "https://www.patreon.com/posts/example-supply-crate-set", "notes": "Synthetic sample model for testing.", "files": ["supply-crate-set.stl"], "img": "previews/2026-01-supply-crate-set.png"}, {"id": "2026-02-goblin-banner-pole", "title": "Goblin Banner Pole", "tags": ["miniature", "goblin"], "tier": "Merchant", "release": "2026-02", "url": "https://www.patreon.com/posts/example-goblin-banner-pole", "notes": "Synthetic sample model for testing.", "files": ["goblin-banner-pole.stl"], "img": "previews/2026-02-goblin-banner-pole.png"}, {"id": "2026-02-rune-pillar", "title": "Rune Pillar", "tags": ["terrain", "magic"], "tier": "Basic", "release": "2026-02", "url": "https://www.patreon.com/posts/example-rune-pillar", "notes": "Synthetic sample model for testing.", "files": ["rune-pillar.stl"], "img": "previews/2026-02-rune-pillar.png"}, {"id": "2026-03-arch-gate", "title": "Arch Gate", "tags": ["terrain", "dungeon"], "tier": "Basic", "release": "2026-03", "url": "https://www.patreon.com/posts/example-arch-gate", "notes": "Synthetic sample model for testing.", "files": ["arch-gate.stl"], "img": "previews/2026-03-arch-gate.png"}, {"id": "2026-03-treasure-chest", "title": "Treasure Chest", "tags": ["props", "loot"], "tier": "Merchant", "release": "2026-03", "url": "https://www.patreon.com/posts/example-treasure-chest", "notes": "Synthetic sample model for testing.", "files": ["treasure-chest.stl"], "img": "previews/2026-03-treasure-chest.png"}, {"id": "2026-04-crystal-cluster", "title": "Crystal Cluster", "tags": ["terrain", "magic"], "tier": "Merchant", "release": "2026-04", "url": "https://www.patreon.com/posts/example-crystal-cluster", "notes": "Synthetic sample model for testing.", "files": ["crystal-cluster.stl"], "img": "previews/2026-04-crystal-cluster.png"}, {"id": "2026-04-hex-base-25mm-10-pack", "title": "Hex Base 25mm (10 pack)", "tags": ["bases"], "tier": "Basic", "release": "2026-04", "url": "https://www.patreon.com/posts/example-hex-base-25mm-10-pack", "notes": "Synthetic sample model for testing.", "files": ["hex-base-25mm-10-pack.stl"], "img": "previews/2026-04-hex-base-25mm-10-pack.png"}];
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const uniq=a=>[...new Set(a)].filter(Boolean).sort();
+uniq(DATA.map(d=>d.tier)).forEach(t=>$('#tier').add(new Option(t,t)));
+uniq(DATA.map(d=>d.release)).reverse().forEach(m=>$('#month').add(new Option(m,m)));
+function render(){const q=$('#q').value.toLowerCase().trim().split(/\s+/).filter(Boolean),t=$('#tier').value,m=$('#month').value,s=$('#sort').value;
+let r=DATA.filter(d=>(!t||d.tier===t)&&(!m||d.release===m)&&q.every(w=>(d.title+' '+d.tags.join(' ')+' '+d.notes+' '+d.files.join(' ')).toLowerCase().includes(w)));
+r.sort((a,b)=>s==='az'?a.title.localeCompare(b.title):s==='old'?a.release.localeCompare(b.release):b.release.localeCompare(a.release));
+$('#count').textContent=r.length+' of '+DATA.length+' models';
+$('#grid').innerHTML=r.map(d=>`<div class="card"><img loading="lazy" src="${esc(d.img)}" alt="${esc(d.title)} preview"><div class="body">
+<div class="t">${esc(d.title)}</div><div class="meta">${esc(d.release)}${d.tier?' · '+esc(d.tier):''} · ${d.files.length} file${d.files.length==1?'':'s'}</div>
+<div class="tags">${d.tags.map(x=>`<span class="tag" data-t="${esc(x)}">${esc(x)}</span>`).join('')}</div>
+${d.url?`<a class="btn" href="${esc(d.url)}" target="_blank" rel="noopener">Get it on the creator's page</a>`:''}
+${d.dl?d.dl.map(f=>`<a class="btn" href="${esc(f)}" download>Download ${esc(f.split('/').pop())}</a>`).join(''):''}</div></div>`).join('');
+document.querySelectorAll('.tag').forEach(e=>e.onclick=()=>{$('#q').value=e.dataset.t;render()});}
+['#q','#tier','#month','#sort'].forEach(s=>$(s).addEventListener('input',render));render();
+</script></body></html>

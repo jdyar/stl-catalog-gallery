@@ -1,0 +1,129 @@
+[
+ {
+  "id": "2026-01-stone-well",
+  "title": "Stone Well",
+  "tags": [
+   "terrain",
+   "dungeon"
+  ],
+  "tier": "Basic",
+  "release": "2026-01",
+  "url": "https://www.patreon.com/posts/example-stone-well",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "stone-well.stl"
+  ],
+  "img": "previews/2026-01-stone-well.png"
+ },
+ {
+  "id": "2026-01-supply-crate-set",
+  "title": "Supply Crate Set",
+  "tags": [
+   "terrain",
+   "props"
+  ],
+  "tier": "Basic",
+  "release": "2026-01",
+  "url": "https://www.patreon.com/posts/example-supply-crate-set",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "supply-crate-set.stl"
+  ],
+  "img": "previews/2026-01-supply-crate-set.png"
+ },
+ {
+  "id": "2026-02-goblin-banner-pole",
+  "title": "Goblin Banner Pole",
+  "tags": [
+   "miniature",
+   "goblin"
+  ],
+  "tier": "Merchant",
+  "release": "2026-02",
+  "url": "https://www.patreon.com/posts/example-goblin-banner-pole",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "goblin-banner-pole.stl"
+  ],
+  "img": "previews/2026-02-goblin-banner-pole.png"
+ },
+ {
+  "id": "2026-02-rune-pillar",
+  "title": "Rune Pillar",
+  "tags": [
+   "terrain",
+   "magic"
+  ],
+  "tier": "Basic",
+  "release": "2026-02",
+  "url": "https://www.patreon.com/posts/example-rune-pillar",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "rune-pillar.stl"
+  ],
+  "img": "previews/2026-02-rune-pillar.png"
+ },
+ {
+  "id": "2026-03-arch-gate",
+  "title": "Arch Gate",
+  "tags": [
+   "terrain",
+   "dungeon"
+  ],
+  "tier": "Basic",
+  "release": "2026-03",
+  "url": "https://www.patreon.com/posts/example-arch-gate",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "arch-gate.stl"
+  ],
+  "img": "previews/2026-03-arch-gate.png"
+ },
+ {
+  "id": "2026-03-treasure-chest",
+  "title": "Treasure Chest",
+  "tags": [
+   "props",
+   "loot"
+  ],
+  "tier": "Merchant",
+  "release": "2026-03",
+  "url": "https://www.patreon.com/posts/example-treasure-chest",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "treasure-chest.stl"
+  ],
+  "img": "previews/2026-03-treasure-chest.png"
+ },
+ {
+  "id": "2026-04-crystal-cluster",
+  "title": "Crystal Cluster",
+  "tags": [
+   "terrain",
+   "magic"
+  ],
+  "tier": "Merchant",
+  "release": "2026-04",
+  "url": "https://www.patreon.com/posts/example-crystal-cluster",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "crystal-cluster.stl"
+  ],
+  "img": "previews/2026-04-crystal-cluster.png"
+ },
+ {
+  "id": "2026-04-hex-base-25mm-10-pack",
+  "title": "Hex Base 25mm (10 pack)",
+  "tags": [
+   "bases"
+  ],
+  "tier": "Basic",
+  "release": "2026-04",
+  "url": "https://www.patreon.com/posts/example-hex-base-25mm-10-pack",
+  "notes": "Synthetic sample model for testing.",
+  "files": [
+   "hex-base-25mm-10-pack.stl"
+  ],
+  "img": "previews/2026-04-hex-base-25mm-10-pack.png"
+ }
+]

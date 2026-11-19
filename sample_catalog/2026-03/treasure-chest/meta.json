@@ -1,0 +1,11 @@
+{
+ "title": "Treasure Chest",
+ "tags": [
+  "props",
+  "loot"
+ ],
+ "tier": "Merchant",
+ "release": "2026-03",
+ "patreon_url": "https://www.patreon.com/posts/example-treasure-chest",
+ "notes": "Synthetic sample model for testing."
+}
